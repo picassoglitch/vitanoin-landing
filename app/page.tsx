@@ -195,36 +195,37 @@ export default function Home() {
               )}
 
               <div>
-                <label className={labelClass}>Nombre completo *</label>
-                <input name="full_name" required type="text" className={inputClass} />
+                <label htmlFor="full_name" className={labelClass}>Nombre completo *</label>
+                <input id="full_name" name="full_name" required type="text" className={inputClass} />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>Fecha nacimiento *</label>
-                  <input name="birth_date" required type="date" className={inputClass} />
+                  <label htmlFor="birth_date" className={labelClass}>Fecha nacimiento *</label>
+                  <input id="birth_date" name="birth_date" required type="date" className={inputClass} />
                 </div>
                 <div>
-                  <label className={labelClass}>Ciudad y Estado *</label>
-                  <input name="city_state" required type="text" placeholder="CDMX, México" className={inputClass} />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3">
-                <div>
-                  <label className={labelClass}>Correo electrónico *</label>
-                  <input name="email" required type="email" className={inputClass} />
-                </div>
-                <div>
-                  <label className={labelClass}>WhatsApp *</label>
-                  <input name="phone" required type="tel" className={inputClass} />
+                  <label htmlFor="city_state" className={labelClass}>Ciudad y Estado *</label>
+                  <input id="city_state" name="city_state" required type="text" placeholder="CDMX, México" className={inputClass} />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>Usuario Instagram *</label>
+                  <label htmlFor="email" className={labelClass}>Correo electrónico *</label>
+                  <input id="email" name="email" required type="email" autoComplete="email" className={inputClass} />
+                </div>
+                <div>
+                  <label htmlFor="phone" className={labelClass}>WhatsApp *</label>
+                  <input id="phone" name="phone" required type="tel" autoComplete="tel" className={inputClass} />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label htmlFor="instagram_handle" className={labelClass}>Usuario Instagram *</label>
                   <input
+                    id="instagram_handle"
                     name="instagram_handle"
                     required
                     placeholder="@usuario"
@@ -233,8 +234,9 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className={labelClass}>Seguidores *</label>
+                  <label htmlFor="follower_count" className={labelClass}>Seguidores *</label>
                   <input
+                    id="follower_count"
                     name="follower_count"
                     required
                     type="number"
@@ -246,8 +248,9 @@ export default function Home() {
               </div>
 
               <div>
-                <label className={labelClass}>Enlace directo a Instagram *</label>
+                <label htmlFor="instagram_link" className={labelClass}>Enlace directo a Instagram *</label>
                 <input
+                  id="instagram_link"
                   name="instagram_link"
                   required
                   type="url"
@@ -258,8 +261,8 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>Tiempo creando contenido *</label>
-                  <select name="time_creating_content" required defaultValue="" className={selectClass}>
+                  <label htmlFor="time_creating_content" className={labelClass}>Tiempo creando contenido *</label>
+                  <select id="time_creating_content" name="time_creating_content" required defaultValue="" className={selectClass}>
                     <option value="" disabled>
                       Selecciona
                     </option>
@@ -270,8 +273,8 @@ export default function Home() {
                   </select>
                 </div>
                 <div>
-                  <label className={labelClass}>Categoría principal *</label>
-                  <select name="primary_category" required defaultValue="" className={selectClass}>
+                  <label htmlFor="primary_category" className={labelClass}>Categoría principal *</label>
+                  <select id="primary_category" name="primary_category" required defaultValue="" className={selectClass}>
                     <option value="" disabled>
                       Selecciona
                     </option>
@@ -288,22 +291,23 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>¿Perfil es público? *</label>
-                  <select name="is_profile_public" required defaultValue="true" className={selectClass}>
+                  <label htmlFor="is_profile_public" className={labelClass}>¿Perfil es público? *</label>
+                  <select id="is_profile_public" name="is_profile_public" required defaultValue="true" className={selectClass}>
                     <option value="true">Sí</option>
                     <option value="false">No</option>
                   </select>
                 </div>
                 <div>
-                  <label className={labelClass}>Promedio views Reels</label>
-                  <input name="avg_reel_views" type="number" min="0" placeholder="Últimos 5 Reels" className={inputClass} />
+                  <label htmlFor="avg_reel_views" className={labelClass}>Promedio views Reels</label>
+                  <input id="avg_reel_views" name="avg_reel_views" type="number" min="0" placeholder="Últimos 5 Reels" className={inputClass} />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className={labelClass}>Engagement Rate (%)</label>
+                  <label htmlFor="engagement_rate" className={labelClass}>Engagement Rate (%)</label>
                   <input
+                    id="engagement_rate"
                     name="engagement_rate"
                     type="number"
                     step="0.01"
@@ -314,8 +318,9 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <label className={labelClass}>¿Colaboras con marcas? *</label>
+                  <label htmlFor="active_collaborations" className={labelClass}>¿Colaboras con marcas? *</label>
                   <select
+                    id="active_collaborations"
                     name="active_collaborations"
                     required
                     value={hasCollaborations}
@@ -330,8 +335,9 @@ export default function Home() {
 
               {hasCollaborations === 'Sí' && (
                 <div>
-                  <label className={labelClass}>¿Con qué marcas? *</label>
+                  <label htmlFor="collaboration_brands" className={labelClass}>¿Con qué marcas? *</label>
                   <input
+                    id="collaboration_brands"
                     name="collaboration_brands"
                     required
                     type="text"
@@ -342,13 +348,13 @@ export default function Home() {
               )}
 
               <div>
-                <label className={labelClass}>Enlace a contenido representativo *</label>
-                <input name="best_content_link" required type="url" className={inputClass} />
+                <label htmlFor="best_content_link" className={labelClass}>Enlace a contenido representativo *</label>
+                <input id="best_content_link" name="best_content_link" required type="url" className={inputClass} />
               </div>
 
               <div>
-                <label className={labelClass}>¿Por qué quieres ser parte? *</label>
-                <textarea name="motivation" required rows={3} className={inputClass}></textarea>
+                <label htmlFor="motivation" className={labelClass}>¿Por qué quieres ser parte? *</label>
+                <textarea id="motivation" name="motivation" required rows={3} className={inputClass}></textarea>
               </div>
 
               <fieldset className="space-y-2 text-xs text-slate-600 pt-2">
