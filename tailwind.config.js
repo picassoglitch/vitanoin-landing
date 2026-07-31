@@ -5,6 +5,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
+        hand: ["var(--font-hand)", "cursive"],
+      },
       colors: {
         panalab: {
           navy: "#002B66",
