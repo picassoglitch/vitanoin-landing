@@ -4,25 +4,18 @@
 export const NAVY = '#002B66'
 export const SKY = '#00A3E0'
 
-export function Logo({ light = false }: { light?: boolean }) {
-  const main = light ? 'text-white' : 'text-[#002B66]'
-  const sub = light ? 'text-sky-200' : 'text-sky-600'
+/** Official Panalab mark. Source artwork: public/images/panalab-logo-source.ai
+ *  Always use these assets rather than setting the name in type. */
+export function Logo({ light = false, className = '' }: { light?: boolean; className?: string }) {
   return (
-    <span className="flex items-center gap-2.5 shrink-0">
-      <span
-        aria-hidden
-        className={`grid h-8 w-8 shrink-0 place-items-center rounded-md border-2 text-xs font-black sm:h-9 sm:w-9 sm:text-sm ${
-          light ? 'border-white text-white' : 'border-[#002B66] text-[#002B66]'
-        }`}
-      >
-        PL
-      </span>
-      <span className="leading-none">
-        <span className={`block text-[9px] font-semibold tracking-[0.14em] sm:text-[11px] ${sub}`}>LABORATORIOS</span>
-        <span className={`block text-base font-extrabold tracking-tight sm:text-lg ${main}`}>PANALAB</span>
-        <span className={`block text-[9px] italic sm:text-[10px] ${sub}`}>Personas en piel®</span>
-      </span>
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={light ? '/images/panalab-logo-white.png' : '/images/panalab-logo.png'}
+      alt="Laboratorios Panalab México"
+      width={1224}
+      height={395}
+      className={`h-9 w-auto shrink-0 sm:h-11 ${className}`}
+    />
   )
 }
 

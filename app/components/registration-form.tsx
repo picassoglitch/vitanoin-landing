@@ -297,6 +297,17 @@ export function RegistrationForm() {
                   <span>{consent.text}</span>
                 </label>
               ))}
+              <p className="pt-1 text-[10px] text-slate-500">
+                Consulta los{' '}
+                <a href="/terminos" className="font-semibold text-[#002B66] underline decoration-sky-300 underline-offset-2">
+                  Términos y Condiciones
+                </a>{' '}
+                y el{' '}
+                <a href="/terminos#privacidad" className="font-semibold text-[#002B66] underline decoration-sky-300 underline-offset-2">
+                  Aviso de Privacidad
+                </a>
+                .
+              </p>
             </fieldset>
 
             <button

@@ -20,7 +20,7 @@ export function SiteHeader() {
         </nav>
 
         <a
-          href="#registro"
+          href="/#registro"
           className="shrink-0 rounded-md bg-[#002B66] px-3 py-2 text-[10px] font-bold tracking-wide text-white transition hover:bg-blue-900 sm:px-5 sm:py-2.5 sm:text-xs"
         >
           <span className="sm:hidden">ÚNETE</span>

@@ -40,20 +40,17 @@ export function HeroCollage() {
       <div className="flex items-center justify-center gap-2 pt-8 sm:gap-3">
         {COLLAGE.cards.map((card) => (
           <figure
-            key={card.handle}
+            key={card.caption}
             style={{ transform: `rotate(${card.tilt}) translateY(${card.lift})` }}
-            className="w-[23%] min-w-[86px] rounded-sm bg-white p-1.5 pb-6 shadow-lg ring-1 ring-slate-900/5 transition hover:z-10 hover:scale-[1.03]"
+            className="w-[23%] min-w-[86px] rounded-sm bg-white p-1.5 pb-5 shadow-lg ring-1 ring-slate-900/5 transition hover:z-10 hover:scale-[1.03]"
           >
             <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
-              <Photo src={card.src} alt={`Contenido de ${card.handle}`} label="UGC" />
-              <figcaption className="absolute left-1 top-1 rounded bg-black/45 px-1.5 py-0.5 text-[8px] font-medium text-white">
-                {card.handle}
-              </figcaption>
+              <Photo src={card.src} alt="Contenido de la comunidad Vitanoin" label="UGC" />
             </div>
-            <p className="mt-1.5 px-0.5 text-[8px] leading-snug text-slate-600">
+            <figcaption className="mt-1.5 px-0.5 text-[8px] leading-snug text-slate-600">
               <Heart className="mr-0.5 inline-block h-2 w-2 text-rose-400" />
               {card.caption}
-            </p>
+            </figcaption>
           </figure>
         ))}
       </div>

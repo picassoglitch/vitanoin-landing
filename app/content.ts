@@ -3,9 +3,13 @@
 //
 // Wording follows 01_Formulario_Landing_The_Vitanoin_Collective.
 //
-// PLACEHOLDER: entries marked `placeholder: true` carry sample content taken
-// from the design comp. Replace them with real, approved material before the
-// page goes live — several are quotes attributed to named Instagram accounts.
+// IMAGERY: the photographs under /public/images/ugc were cropped out of the
+// design comp (Ejemplo web.png) so the page matches the approved look. They are
+// comp-resolution — roughly the size they render at, so they will look soft on
+// high-density screens — and the handles baked into them belong to real
+// Instagram accounts. Swap in the original full-resolution files, with usage
+// rights confirmed, before this goes public. Entries still marked
+// `placeholder: true` carry sample wording from the comp for the same reason.
 
 export const SITE = {
   brand: 'LABORATORIOS PANALAB',
@@ -15,12 +19,13 @@ export const SITE = {
   instagram: '@Panalabmx',
 }
 
+// Absolute so the same nav works from /terminos as well as the home page.
 export const NAV = [
-  { label: 'Registro', href: '#registro' },
-  { label: 'Ganadoras', href: '#ganadoras' },
-  { label: 'FAQs', href: '#faqs' },
-  { label: 'Bases de participación', href: '#bases' },
-  { label: 'TyC', href: '#tyc' },
+  { label: 'Registro', href: '/#registro' },
+  { label: 'Ganadoras', href: '/#ganadoras' },
+  { label: 'FAQs', href: '/#faqs' },
+  { label: 'Bases de participación', href: '/#bases' },
+  { label: 'TyC', href: '/terminos' },
 ]
 
 export const HERO = {
@@ -38,16 +43,17 @@ export const COLLAGE = {
   noteTop: 'Historias reales que inspiran',
   noteBottom: 'Ciencia que se siente',
   placeholder: true,
+  // The Instagram handle is part of each image, so it is not repeated in markup.
   cards: [
-    { handle: '@creadora1', caption: 'Mi momento favorito con VITANOIN CS', src: null, tilt: '-6deg', lift: '0px' },
-    { handle: '@creadora2', caption: 'Constancia + Ciencia = Piel que se nota', src: null, tilt: '3deg', lift: '-18px' },
-    { handle: '@creadora3', caption: 'Mi aliado diario para una piel luminosa', src: null, tilt: '-3deg', lift: '10px' },
-    { handle: '@creadora4', caption: 'Compartir lo que me hace sentirme increíble', src: null, tilt: '5deg', lift: '-8px' },
+    { caption: 'Mi momento favorito con VITANOIN CS', src: '/images/ugc/collage-1.png', tilt: '-6deg', lift: '0px' },
+    { caption: 'Constancia + Ciencia = Piel que se nota', src: '/images/ugc/collage-2.png', tilt: '3deg', lift: '-18px' },
+    { caption: 'Mi aliado diario para una piel luminosa', src: '/images/ugc/collage-3.png', tilt: '-3deg', lift: '10px' },
+    { caption: 'Compartir lo que me hace sentirme increíble', src: '/images/ugc/collage-4.png', tilt: '5deg', lift: '-8px' },
   ],
 }
 
 export const PRODUCT_SHOT = {
-  src: null as string | null,
+  src: '/images/producto-vitanoin.png' as string | null,
   alt: 'Vitanoin CS Serum y Vitanoin Lifting de Laboratorios Panalab',
 }
 
@@ -64,15 +70,15 @@ export const TESTIMONIAL = {
   placeholder: true,
   quote:
     'Desde que comparto mi rutina con Vitanoin, he conectado con una comunidad increíble y mi piel nunca se había visto mejor.',
-  handle: '@creadora',
-  src: null as string | null,
+  handle: '@valemontufar',
+  src: '/images/ugc/testimonial.png' as string | null,
 }
 
 export const FORM_CARD = {
   title: '¡Regístrate y sé parte!',
   subtitle: 'Selección ordenada de 500 perfiles.',
   note: '¡Tu historia puede inspirar a miles más!',
-  polaroidSrc: null as string | null,
+  polaroidSrc: '/images/ugc/form-polaroid.png' as string | null,
 }
 
 export const WINNERS = {
@@ -81,9 +87,9 @@ export const WINNERS = {
   linkLabel: 'Conoce a más ganadoras',
   placeholder: true,
   people: [
-    { handle: '@creadora1', role: 'Creación de contenido', place: 'México', quote: 'Vitanoin transformó mi piel y mi contenido. Gracias por esta oportunidad.', src: null },
-    { handle: '@creadora2', role: 'Beauty & Skincare', place: 'México', quote: 'Hoy inspiro a mi comunidad a cuidar su piel con ciencia.', src: null },
-    { handle: '@creadora3', role: 'Lifestyle & Beauty', place: 'México', quote: 'Ser parte del Collective me ha permitido crecer y aprender cada día.', src: null },
+    { handle: '@laurabautista', role: 'Creación de contenido', place: 'Colombia', quote: 'Vitanoin transformó mi piel y mi contenido. Gracias por esta oportunidad.', src: '/images/ugc/winner-1.png' },
+    { handle: '@karladiaz', role: 'Beauty & Skincare', place: 'México', quote: 'Hoy inspiro a mi comunidad a cuidar su piel con ciencia.', src: '/images/ugc/winner-2.png' },
+    { handle: '@nathalyfer', role: 'Lifestyle & Beauty', place: 'Perú', quote: 'Ser parte del Collective me ha permitido crecer y aprender cada día.', src: '/images/ugc/winner-3.png' },
   ],
 }
 
@@ -145,8 +151,8 @@ export const TYC = {
   title: 'Términos y condiciones',
   body: 'Al participar aceptas nuestros Términos y Condiciones y la Política de Privacidad.',
   cta: 'Consultar TyC',
-  termsHref: '#tyc',
-  privacyHref: '#tyc',
+  termsHref: '/terminos',
+  privacyHref: '/terminos#privacidad',
   pending: true,
 }
 
@@ -154,7 +160,7 @@ export const COMMUNITY = {
   note: 'Nuestra comunidad no para de crecer',
   lastTile: 'Tú puedes ser la siguiente',
   placeholder: true,
-  count: 9,
+  tiles: Array.from({ length: 9 }, (_, i) => `/images/ugc/community-${i + 1}.png`),
 }
 
 export const SOCIALS = [

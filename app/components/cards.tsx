@@ -184,12 +184,12 @@ export function CommunityStrip() {
       </div>
 
       <div className="flex flex-1 gap-2 overflow-x-auto pb-1">
-        {Array.from({ length: COMMUNITY.count }).map((_, index) => (
+        {COMMUNITY.tiles.map((src, index) => (
           <div
             key={index}
             className="aspect-square w-[9%] min-w-[74px] shrink-0 overflow-hidden rounded-lg ring-1 ring-slate-900/5"
           >
-            <Photo alt="Contenido de la comunidad" label="UGC" />
+            <Photo src={src} alt="Contenido de la comunidad Vitanoin" label="UGC" />
           </div>
         ))}
         <div className="grid aspect-square w-[9%] min-w-[74px] shrink-0 place-items-center rounded-lg bg-sky-50 px-2 text-center">
