@@ -18,6 +18,7 @@ function applyFilters<T>(query: T, filters: Filters): T {
         `full_name.ilike.%${term}%`,
         `email.ilike.%${term}%`,
         `instagram_handle.ilike.%${term}%`,
+        `tiktok_handle.ilike.%${term}%`,
         `city_state.ilike.%${term}%`,
       ].join(','),
     )

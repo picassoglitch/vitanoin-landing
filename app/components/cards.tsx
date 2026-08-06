@@ -1,5 +1,5 @@
-import { BASES, BENEFITS, COMMUNITY, FAQS, STEPS, TESTIMONIAL, TYC, WINNERS } from '../content'
-import { Arrow, BenefitIcon, Check, Heart, Photo } from './ui'
+import { BASES, BENEFITS, FAQS, PRODUCTS, STEPS, TYC } from '../content'
+import { Arrow, BenefitIcon, Check } from './ui'
 
 const CARD = 'rounded-2xl border border-slate-100 bg-white shadow-sm'
 
@@ -40,45 +40,6 @@ export function BenefitsStrip() {
         </div>
       ))}
     </div>
-  )
-}
-
-export function TestimonialCard() {
-  return (
-    <figure className={`${CARD} relative flex h-full items-center gap-4 bg-[#FBFAF7] px-5 py-4`}>
-      <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full ring-2 ring-white">
-        <Photo src={TESTIMONIAL.src} alt={`Foto de ${TESTIMONIAL.handle}`} label="Foto" />
-      </div>
-      <div>
-        <blockquote className="text-xs leading-relaxed text-slate-700">“{TESTIMONIAL.quote}”</blockquote>
-        <figcaption className="mt-1.5 text-xs font-semibold text-sky-600">— {TESTIMONIAL.handle}</figcaption>
-      </div>
-      <Heart className="absolute bottom-3 right-4 h-4 w-4 text-sky-300" />
-    </figure>
-  )
-}
-
-export function WinnersCard() {
-  return (
-    <section id="ganadoras" className={`${CARD} flex flex-col scroll-mt-24`}>
-      <CardHead icon="trophy" eyebrow={WINNERS.eyebrow} title={WINNERS.title} />
-      <div className="grid grid-cols-3 gap-3 p-5">
-        {WINNERS.people.map((person) => (
-          <figure key={person.handle}>
-            <div className="mb-2 h-14 w-14 overflow-hidden rounded-full ring-2 ring-slate-100">
-              <Photo src={person.src} alt={`Foto de ${person.handle}`} label="Foto" />
-            </div>
-            <figcaption>
-              <span className="block text-xs font-bold text-[#002B66]">{person.handle}</span>
-              <span className="block text-[10px] leading-tight text-slate-500">{person.role}</span>
-              <span className="block text-[10px] text-slate-400">{person.place}</span>
-            </figcaption>
-            <blockquote className="mt-1.5 text-[10px] leading-snug text-slate-600">“{person.quote}”</blockquote>
-          </figure>
-        ))}
-      </div>
-      <CardLink label={WINNERS.linkLabel} href="#ganadoras" />
-    </section>
   )
 }
 
@@ -163,11 +124,28 @@ export function StepsCard() {
       <p className="mt-0.5 text-xs text-slate-500">{STEPS.title}</p>
       <ol className="mt-4 grid gap-3 sm:grid-cols-2">
         {STEPS.items.map((step, index) => (
-          <li key={step} className="flex gap-2.5 text-xs leading-snug text-slate-600">
+          <li
+            key={step.text}
+            className={`flex gap-2.5 text-xs leading-snug text-slate-600 ${'ideas' in step ? 'sm:col-span-2' : ''}`}
+          >
             <span className="grid h-5 w-5 shrink-0 place-items-center rounded-full bg-sky-50 text-[10px] font-bold text-sky-600">
               {index + 1}
             </span>
-            {step}
+            <div>
+              {step.text}
+              {'ideas' in step && step.ideas && (
+                <ul className="mt-2 space-y-1.5">
+                  {step.ideas.map((idea) => (
+                    <li key={idea.title} className="flex gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-sky-400" />
+                      <span>
+                        <span className="font-semibold text-[#002B66]">{idea.title}:</span> {idea.text}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </li>
         ))}
       </ol>
@@ -175,26 +153,24 @@ export function StepsCard() {
   )
 }
 
-export function CommunityStrip() {
+export function ProductsCard() {
   return (
-    <section className="mt-8 flex items-center gap-5">
-      <div className="hidden shrink-0 items-center gap-2 lg:flex">
-        <p className="font-hand max-w-[9rem] text-lg leading-tight text-sky-600">{COMMUNITY.note}</p>
-        <Arrow className="h-6 w-10 text-sky-400" />
-      </div>
-
-      <div className="flex flex-1 gap-2 overflow-x-auto pb-1">
-        {COMMUNITY.tiles.map((src, index) => (
-          <div
-            key={index}
-            className="aspect-square w-[9%] min-w-[74px] shrink-0 overflow-hidden rounded-lg ring-1 ring-slate-900/5"
-          >
-            <Photo src={src} alt="Contenido de la comunidad Vitanoin" label="UGC" />
-          </div>
+    <section id="productos" className={`${CARD} scroll-mt-24 p-5`}>
+      <p className="text-sm font-bold tracking-wide text-[#002B66]">{PRODUCTS.eyebrow}</p>
+      <p className="mt-0.5 text-xs text-slate-500">{PRODUCTS.title}</p>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+        {PRODUCTS.items.map((product) => (
+          <article key={product.name} className="rounded-xl border border-slate-100 bg-[#FBFAF7] p-4">
+            <h3 className="text-sm font-bold text-[#002B66]">{product.name}</h3>
+            <ul className="mt-2.5 space-y-2">
+              {product.details.map((detail) => (
+                <li key={detail.label} className="text-xs leading-snug text-slate-600">
+                  <span className="font-semibold text-slate-700">{detail.label}:</span> {detail.text}
+                </li>
+              ))}
+            </ul>
+          </article>
         ))}
-        <div className="grid aspect-square w-[9%] min-w-[74px] shrink-0 place-items-center rounded-lg bg-sky-50 px-2 text-center">
-          <p className="font-hand text-sm leading-tight text-sky-700">{COMMUNITY.lastTile}</p>
-        </div>
       </div>
     </section>
   )

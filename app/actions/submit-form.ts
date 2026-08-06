@@ -52,6 +52,11 @@ export async function submitVitanoinForm(formData: FormData) {
     return { success: false, message: 'Tu perfil de Instagram debe ser público para participar.' }
   }
 
+  const avg_reel_views = optionalNumber(formData.get('avg_reel_views'))
+  if (avg_reel_views === null || avg_reel_views < 0) {
+    return { success: false, message: 'Ingresa tu promedio de views mensuales.' }
+  }
+
   const active_collaborations = formData.get('active_collaborations') as string
   const collaboration_brands = ((formData.get('collaboration_brands') as string) || '').trim()
 
@@ -81,12 +86,15 @@ export async function submitVitanoinForm(formData: FormData) {
     phone: (formData.get('phone') as string).trim(),
     instagram_handle: (formData.get('instagram_handle') as string).trim(),
     instagram_link: (formData.get('instagram_link') as string).trim(),
+    tiktok_handle: (formData.get('tiktok_handle') as string).trim(),
+    tiktok_link: (formData.get('tiktok_link') as string).trim(),
     follower_count,
     is_profile_public: true,
     time_creating_content: formData.get('time_creating_content') as string,
     primary_category: formData.get('primary_category') as string,
-    avg_reel_views: optionalNumber(formData.get('avg_reel_views')) ?? 0,
+    avg_reel_views,
     engagement_rate: optionalNumber(formData.get('engagement_rate')),
+    true_engagement_rate: optionalNumber(formData.get('true_engagement_rate')),
     best_content_link: (formData.get('best_content_link') as string).trim(),
     motivation: (formData.get('motivation') as string).trim(),
     active_collaborations,

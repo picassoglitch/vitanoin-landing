@@ -13,7 +13,7 @@ const CONSENTS = [
   { name: 'confirmed_age', text: 'Confirmo que soy mayor de edad.' },
   {
     name: 'confirmed_public_profile',
-    text: 'Confirmo que mi perfil de Instagram es público y cuenta con al menos 5,000 seguidores.',
+    text: 'Confirmo que mis perfiles de Instagram y TikTok son públicos y que cuento con al menos 5,000 seguidores.',
   },
   { name: 'accepted_terms', text: 'Acepto los términos y condiciones de “The Vitanoin Collective”.' },
   { name: 'accepted_privacy', text: 'He leído y acepto el aviso de privacidad.' },
@@ -154,6 +154,34 @@ export function RegistrationForm() {
               />
             </div>
 
+            <div>
+              <label htmlFor="tiktok_handle" className={label}>
+                Usuario de TikTok *
+              </label>
+              <input
+                id="tiktok_handle"
+                name="tiktok_handle"
+                type="text"
+                required
+                placeholder="@usuario"
+                className={input}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="tiktok_link" className={label}>
+                Enlace directo a TikTok *
+              </label>
+              <input
+                id="tiktok_link"
+                name="tiktok_link"
+                type="url"
+                required
+                placeholder="https://tiktok.com/@tuperfil"
+                className={input}
+              />
+            </div>
+
             <div className="grid grid-cols-2 gap-2.5">
               <div>
                 <label htmlFor="time_creating_content" className={label}>
@@ -200,14 +228,14 @@ export function RegistrationForm() {
               </div>
               <div>
                 <label htmlFor="avg_reel_views" className={label}>
-                  Promedio de views
+                  Promedio de views mensuales *
                 </label>
                 <input
                   id="avg_reel_views"
                   name="avg_reel_views"
                   type="number"
                   min="0"
-                  placeholder="Últimos 5 Reels"
+                  required
                   className={input}
                 />
               </div>
@@ -230,21 +258,37 @@ export function RegistrationForm() {
                 />
               </div>
               <div>
-                <label htmlFor="active_collaborations" className={label}>
-                  ¿Colaboras con marcas? *
+                <label htmlFor="true_engagement_rate" className={label}>
+                  True Engagement Rate (%)
                 </label>
-                <select
-                  id="active_collaborations"
-                  name="active_collaborations"
-                  required
-                  value={collaborates}
-                  onChange={(event) => setCollaborates(event.target.value)}
+                <input
+                  id="true_engagement_rate"
+                  name="true_engagement_rate"
+                  type="number"
+                  min="0"
+                  max="100"
+                  step="0.01"
+                  placeholder="Opcional"
                   className={input}
-                >
-                  <option value="No">No</option>
-                  <option value="Sí">Sí</option>
-                </select>
+                />
               </div>
+            </div>
+
+            <div>
+              <label htmlFor="active_collaborations" className={label}>
+                ¿Colaboras con marcas? *
+              </label>
+              <select
+                id="active_collaborations"
+                name="active_collaborations"
+                required
+                value={collaborates}
+                onChange={(event) => setCollaborates(event.target.value)}
+                className={input}
+              >
+                <option value="No">No</option>
+                <option value="Sí">Sí</option>
+              </select>
             </div>
 
             {collaborates === 'Sí' && (

@@ -1,4 +1,4 @@
-import { BasesCard, BenefitsStrip, CommunityStrip, FaqsCard, StepsCard, TestimonialCard, TycCard, WinnersCard } from './components/cards'
+import { BasesCard, BenefitsStrip, FaqsCard, ProductsCard, StepsCard, TycCard } from './components/cards'
 import { HeroCollage, HeroCopy, ProductShot } from './components/hero'
 import { RegistrationForm } from './components/registration-form'
 import { SiteFooter, SiteHeader } from './components/site-chrome'
@@ -26,22 +26,16 @@ export default function Home() {
             matching the approved layout. */}
         <div className="mt-8 grid items-start gap-6 lg:grid-cols-12">
           <div className="space-y-6 lg:col-span-8">
-            <div className="grid gap-6 lg:grid-cols-8">
-              <div className="lg:col-span-5">
-                <BenefitsStrip />
-              </div>
-              <div className="lg:col-span-3">
-                <TestimonialCard />
-              </div>
-            </div>
+            <BenefitsStrip />
 
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-              <WinnersCard />
+            <div className="grid gap-6 md:grid-cols-2">
               <FaqsCard />
               <BasesCard />
             </div>
 
             <StepsCard />
+
+            <ProductsCard />
           </div>
 
           <div className="space-y-6 lg:col-span-4">
@@ -49,8 +43,6 @@ export default function Home() {
             <TycCard />
           </div>
         </div>
-
-        <CommunityStrip />
       </main>
 
       <SiteFooter />

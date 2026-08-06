@@ -40,7 +40,8 @@ export default function TerminosPage() {
           <Section title="1. Quién puede participar">
             <p>
               La convocatoria está dirigida a creadoras de contenido mayores de edad, con residencia en
-              México, cuyo perfil de Instagram sea público y cuente con al menos 5,000 seguidores.
+              México, cuyos perfiles de Instagram y TikTok sean públicos y que cuenten con al menos
+              5,000 seguidores.
             </p>
             <p>
               El registro es personal y gratuito. Se acepta una sola solicitud por persona y por correo
@@ -52,7 +53,18 @@ export default function TerminosPage() {
           <Section title="2. Mecánica de participación">
             <ol className="list-decimal space-y-1.5 pl-5">
               {STEPS.items.map((step) => (
-                <li key={step}>{step}</li>
+                <li key={step.text}>
+                  {step.text}
+                  {'ideas' in step && step.ideas && (
+                    <ul className="mt-1.5 list-disc space-y-1 pl-5">
+                      {step.ideas.map((idea) => (
+                        <li key={idea.title}>
+                          <strong className="font-semibold text-slate-700">{idea.title}:</strong> {idea.text}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
               ))}
             </ol>
           </Section>
@@ -73,7 +85,7 @@ export default function TerminosPage() {
             <p>Las 500 creadoras seleccionadas recibirán un kit Vitanoin para crear y compartir su contenido.</p>
             <p>
               Entre todas las participantes se elegirá a una ganadora, quien se convertirá en la próxima
-              Embajadora Vitanoin y recibirá:
+              Embajadora Panalab y recibirá:
             </p>
             <ul className="list-disc space-y-1.5 pl-5">
               <li>$40,000 MXN en productos Panalab.</li>
@@ -98,9 +110,9 @@ export default function TerminosPage() {
 
           <Section title="6. Vigencia">
             <p>
-              Las fechas de apertura y cierre del registro se anunciarán en los canales oficiales de
-              Panalab. Laboratorios Panalab podrá modificar o dar por terminada la convocatoria por
-              causas justificadas, informándolo por los mismos medios.
+              El registro cierra el 6 de septiembre de 2026 a las 23:59 horas del Centro de México.
+              Laboratorios Panalab podrá modificar o dar por terminada la convocatoria por causas
+              justificadas, informándolo en sus canales oficiales.
             </p>
           </Section>
 
@@ -112,8 +124,8 @@ export default function TerminosPage() {
             <p>
               <strong className="font-semibold text-slate-700">Datos que recabamos.</strong> Nombre
               completo, fecha de nacimiento, ciudad y estado, correo electrónico, teléfono, usuario y
-              enlace de Instagram, número de seguidores, métricas de contenido y la información que la
-              participante decida compartir en el formulario.
+              enlace de Instagram y de TikTok, número de seguidores, métricas de contenido y la
+              información que la participante decida compartir en el formulario.
             </p>
             <p>
               <strong className="font-semibold text-slate-700">Finalidad.</strong> Evaluar las

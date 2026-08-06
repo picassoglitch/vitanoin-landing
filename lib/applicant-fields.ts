@@ -43,11 +43,14 @@ export type Applicant = {
   phone: string
   instagram_handle: string
   instagram_link: string
+  tiktok_handle: string | null
+  tiktok_link: string | null
   follower_count: number
   time_creating_content: string
   primary_category: string
   avg_reel_views: number | null
   engagement_rate: number | null
+  true_engagement_rate: number | null
   best_content_link: string
   motivation: string
   active_collaborations: string | null

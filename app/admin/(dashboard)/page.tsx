@@ -146,6 +146,7 @@ export default async function AdminPage({
                   'Estado',
                   'Nombre',
                   'Instagram',
+                  'TikTok',
                   'Seguidores',
                   'Engagement',
                   'Views prom.',
@@ -185,6 +186,20 @@ export default async function AdminPage({
                     >
                       {row.instagram_handle}
                     </a>
+                  </td>
+                  <td className="px-3 py-2">
+                    {row.tiktok_link ? (
+                      <a
+                        href={row.tiktok_link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sky-600 hover:underline"
+                      >
+                        {row.tiktok_handle ?? 'TikTok'}
+                      </a>
+                    ) : (
+                      <span className="text-slate-400">—</span>
+                    )}
                   </td>
                   <td className="px-3 py-2 tabular-nums">{number(row.follower_count)}</td>
                   <td className="px-3 py-2 tabular-nums">
@@ -246,7 +261,7 @@ export default async function AdminPage({
               ))}
               {rows.length === 0 && (
                 <tr>
-                  <td colSpan={10} className="px-3 py-8 text-center text-slate-400">
+                  <td colSpan={11} className="px-3 py-8 text-center text-slate-400">
                     No hay registros que coincidan con los filtros.
                   </td>
                 </tr>

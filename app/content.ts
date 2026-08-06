@@ -22,7 +22,6 @@ export const SITE = {
 // Absolute so the same nav works from /terminos as well as the home page.
 export const NAV = [
   { label: 'Registro', href: '/#registro' },
-  { label: 'Ganadoras', href: '/#ganadoras' },
   { label: 'FAQs', href: '/#faqs' },
   { label: 'Bases de participación', href: '/#bases' },
   { label: 'TyC', href: '/terminos' },
@@ -66,14 +65,6 @@ export const BENEFITS = [
   { icon: 'play', title: null, text: 'Contenido que educa e impacta de verdad' },
 ]
 
-export const TESTIMONIAL = {
-  placeholder: true,
-  quote:
-    'Desde que comparto mi rutina con Vitanoin, he conectado con una comunidad increíble y mi piel nunca se había visto mejor.',
-  handle: '@valemontufar',
-  src: '/images/ugc/testimonial.png' as string | null,
-}
-
 export const FORM_CARD = {
   title: '¡Regístrate y sé parte!',
   subtitle: 'Selección ordenada de 500 perfiles.',
@@ -81,20 +72,7 @@ export const FORM_CARD = {
   polaroidSrc: '/images/ugc/form-polaroid.png' as string | null,
 }
 
-export const WINNERS = {
-  eyebrow: 'GANADORAS',
-  title: 'Ellas ya son parte del cambio',
-  linkLabel: 'Conoce a más ganadoras',
-  placeholder: true,
-  people: [
-    { handle: '@laurabautista', role: 'Creación de contenido', place: 'Colombia', quote: 'Vitanoin transformó mi piel y mi contenido. Gracias por esta oportunidad.', src: '/images/ugc/winner-1.png' },
-    { handle: '@karladiaz', role: 'Beauty & Skincare', place: 'México', quote: 'Hoy inspiro a mi comunidad a cuidar su piel con ciencia.', src: '/images/ugc/winner-2.png' },
-    { handle: '@nathalyfer', role: 'Lifestyle & Beauty', place: 'Perú', quote: 'Ser parte del Collective me ha permitido crecer y aprender cada día.', src: '/images/ugc/winner-3.png' },
-  ],
-}
-
-// Answers are drawn from the approved document. The closing date is listed as
-// pending there (section 7), so it is not stated as fact here.
+// Answers are drawn from the approved document.
 export const FAQS = {
   eyebrow: 'FAQs',
   title: 'Resolvemos tus dudas',
@@ -102,11 +80,11 @@ export const FAQS = {
   items: [
     {
       q: '¿Quiénes pueden participar?',
-      a: 'Creadoras mayores de edad con un perfil de Instagram público y al menos 5,000 seguidores, que compartan contenido de skincare, belleza, lifestyle, bienestar, moda o maternidad.',
+      a: 'Creadores mayores de edad con un perfil de Instagram y TikTok público y al menos 5,000 seguidores, que compartan contenido de skincare, belleza, lifestyle, bienestar, moda o maternidad.',
     },
     {
       q: '¿Cuáles son los beneficios?',
-      a: 'Las 500 creadoras seleccionadas reciben un kit Vitanoin. Además, una de ellas se convertirá en la próxima Embajadora Vitanoin y recibirá $40,000 MXN en productos Panalab, $18,000 MXN de remuneración por sus contenidos, una colaboración de seis meses y visibilidad en los canales oficiales de Panalab.',
+      a: 'Las 500 creadoras seleccionadas reciben un kit Vitanoin. Además, una de ellas se convertirá en la próxima Embajadora Panalab y recibirá $40,000 MXN en productos Panalab, $18,000 MXN de remuneración por sus contenidos, una colaboración de seis meses y visibilidad en los canales oficiales de Panalab.',
     },
     {
       q: '¿Cómo se seleccionan las participantes?',
@@ -114,7 +92,7 @@ export const FAQS = {
     },
     {
       q: '¿Hasta cuándo puedo registrarme?',
-      a: 'La fecha de cierre se anunciará próximamente en los canales oficiales. Sigue a ' + SITE.instagram + ' para no perderte el aviso.',
+      a: 'La fecha de cierre es el 6 de Septiembre de 2026, 23:59 horas del Centro de México. Sigue a ' + SITE.instagram + ' para no perderte de ningún aviso.',
     },
   ],
 }
@@ -131,17 +109,52 @@ export const BASES = {
   ],
 }
 
-// Spec section 3.
+// Spec section 3. A step may carry `ideas`, rendered as a sub-list.
 export const STEPS = {
   eyebrow: '¿CÓMO PARTICIPAR?',
   title: 'Seis pasos para formar parte',
   items: [
-    'Completa tu registro en esta landing.',
-    'Nuestro equipo revisará tu perfil, comunidad, métricas y calidad de contenido.',
-    'Si eres una de las 500 seleccionadas, recibirás un kit Vitanoin y un código único.',
-    'Crea un Reel con tu primera impresión o rutina usando Vitanoin.',
-    'Comparte el Reel en Stories e incluye el enlace al punto de venta.',
-    'Registra tu contenido y participa para convertirte en la próxima Embajadora Vitanoin.',
+    { text: 'Completa tu registro en esta landing.' },
+    { text: 'Nuestro equipo revisará tu perfil, comunidad, métricas y calidad de contenido.' },
+    { text: 'Si eres una de las 500 seleccionadas, recibirás un kit Vitanoin.' },
+    {
+      text: 'Crea un Reel y un TikTok con alguna de estas ideas de contenido para tu inspiración:',
+      ideas: [
+        { title: 'Unboxing del kit', text: 'Muestra el desempaque y tu reacción al recibir el producto.' },
+        { title: 'Primera impresión', text: 'Graba la textura, sensación y aplicación inicial en tu piel.' },
+        { title: 'Get Ready With Me (GRWM)', text: 'Integra el sérum Vitanoin dentro de tu rutina diaria de cuidado de la piel.' },
+        { title: 'Evolución de uso', text: 'Muestra el cambio o apariencia de tu piel tras varios días de aplicación.' },
+        { title: 'Producto favorito', text: 'Explica por qué Vitanoin se convirtió en un imprescindible de tu cosmetiquera.' },
+      ],
+    },
+    { text: 'Comparte el Reel en Stories e incluye el enlace al punto de venta.' },
+    { text: 'Comparte tus métricas y participa para convertirte en la próxima Embajadora Panalab.' },
+  ],
+}
+
+// Spec section 8: product education.
+export const PRODUCTS = {
+  eyebrow: 'CONOCE TU PRODUCTO Y SUS BENEFICIOS',
+  title: 'Los sérums Vitanoin de tu kit',
+  items: [
+    {
+      name: 'Vitanoin C 5% Serum Facial',
+      details: [
+        { label: 'Beneficios', text: 'Ilumina la piel, ayuda a emparejar el tono facial y combate los signos de envejecimiento prematuro.' },
+        { label: 'Ingredientes clave', text: 'Vitamina C pura y estabilizada al 5% + complejos antioxidantes.' },
+        { label: 'Modo de uso', text: 'Aplicar de 3 a 5 gotas por la mañana sobre la piel limpia y seca de rostro y cuello, antes de tu crema hidratante y protector solar.' },
+        { label: 'Perfil de usuario', text: 'Pieles opacas, con tono irregular o que buscan prevenir el envejecimiento y potenciar la luminosidad diaria.' },
+      ],
+    },
+    {
+      name: 'Vitanoin Lifting Serum Facial',
+      details: [
+        { label: 'Beneficios', text: 'Proporciona un efecto tensor inmediato, mejora la firmeza y elasticidad, y suaviza líneas de expresión.' },
+        { label: 'Ingredientes clave', text: 'Péptidos tensores y activos reafirmantes de alta tecnología.' },
+        { label: 'Modo de uso', text: 'Aplicar de 3 a 5 gotas por la mañana y/o noche sobre rostro y cuello limpios mediante suaves masajes ascendentes hasta su total absorción.' },
+        { label: 'Perfil de usuario', text: 'Pieles que buscan combatir la flacidez, redefinir el óvalo facial o lograr un efecto tensor al instante.' },
+      ],
+    },
   ],
 }
 
@@ -156,17 +169,9 @@ export const TYC = {
   pending: true,
 }
 
-export const COMMUNITY = {
-  note: 'Nuestra comunidad no para de crecer',
-  lastTile: 'Tú puedes ser la siguiente',
-  placeholder: true,
-  tiles: Array.from({ length: 9 }, (_, i) => `/images/ugc/community-${i + 1}.png`),
-}
-
 export const SOCIALS = [
   { name: 'Instagram', href: 'https://instagram.com/panalabmx', icon: 'instagram' },
   { name: 'TikTok', href: 'https://tiktok.com/@panalabmx', icon: 'tiktok' },
-  { name: 'YouTube', href: 'https://youtube.com/@panalabmx', icon: 'youtube' },
   { name: 'Facebook', href: 'https://facebook.com/panalabmx', icon: 'facebook' },
 ]
 

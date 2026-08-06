@@ -48,6 +48,13 @@ alter table public.vitanoin_applicants
   add column if not exists authorized_content_use   boolean not null default false,
   add column if not exists accepted_communications  boolean not null default false;
 
+-- TikTok profile and metrics fields, added 2026-08. Nullable because rows
+-- registered before the form asked for them have no value.
+alter table public.vitanoin_applicants
+  add column if not exists tiktok_handle        text,
+  add column if not exists tiktok_link          text,
+  add column if not exists true_engagement_rate numeric(5,2);
+
 -- Review state, used by the admin dashboard to pick the 500 selected creators.
 alter table public.vitanoin_applicants
   add column if not exists status      text not null default 'pendiente',
