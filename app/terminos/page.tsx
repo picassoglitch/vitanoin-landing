@@ -89,8 +89,7 @@ export default function TerminosPage() {
             </p>
             <ul className="list-disc space-y-1.5 pl-5">
               <li>$40,000 MXN en productos Panalab.</li>
-              <li>$18,000 MXN de remuneración por sus contenidos.</li>
-              <li>Una colaboración con Vitanoin durante seis meses.</li>
+              <li>Un contrato de creadora por seis meses.</li>
               <li>Visibilidad en los canales oficiales de Panalab.</li>
             </ul>
             <p>Los premios son personales e intransferibles y no son canjeables por efectivo.</p>

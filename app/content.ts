@@ -84,7 +84,7 @@ export const FAQS = {
     },
     {
       q: '¿Cuáles son los beneficios?',
-      a: 'Las 500 creadoras seleccionadas reciben un kit Vitanoin. Además, una de ellas se convertirá en la próxima Embajadora Panalab y recibirá $40,000 MXN en productos Panalab, $18,000 MXN de remuneración por sus contenidos, una colaboración de seis meses y visibilidad en los canales oficiales de Panalab.',
+      a: 'Las 500 creadoras seleccionadas reciben un kit Vitanoin. Además, una de ellas se convertirá en la próxima Embajadora Panalab y recibirá $40,000 MXN en productos Panalab y un contrato de creadora por seis meses con visibilidad en los canales oficiales de Panalab.',
     },
     {
       q: '¿Cómo se seleccionan las participantes?',
