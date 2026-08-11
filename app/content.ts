@@ -132,32 +132,6 @@ export const STEPS = {
   ],
 }
 
-// Spec section 8: product education.
-export const PRODUCTS = {
-  eyebrow: 'CONOCE TU PRODUCTO Y SUS BENEFICIOS',
-  title: 'Los sérums Vitanoin de tu kit',
-  items: [
-    {
-      name: 'Vitanoin C 5% Serum Facial',
-      details: [
-        { label: 'Beneficios', text: 'Ilumina la piel, ayuda a emparejar el tono facial y combate los signos de envejecimiento prematuro.' },
-        { label: 'Ingredientes clave', text: 'Vitamina C pura y estabilizada al 5% + complejos antioxidantes.' },
-        { label: 'Modo de uso', text: 'Aplicar de 3 a 5 gotas por la mañana sobre la piel limpia y seca de rostro y cuello, antes de tu crema hidratante y protector solar.' },
-        { label: 'Perfil de usuario', text: 'Pieles opacas, con tono irregular o que buscan prevenir el envejecimiento y potenciar la luminosidad diaria.' },
-      ],
-    },
-    {
-      name: 'Vitanoin Lifting Serum Facial',
-      details: [
-        { label: 'Beneficios', text: 'Proporciona un efecto tensor inmediato, mejora la firmeza y elasticidad, y suaviza líneas de expresión.' },
-        { label: 'Ingredientes clave', text: 'Péptidos tensores y activos reafirmantes de alta tecnología.' },
-        { label: 'Modo de uso', text: 'Aplicar de 3 a 5 gotas por la mañana y/o noche sobre rostro y cuello limpios mediante suaves masajes ascendentes hasta su total absorción.' },
-        { label: 'Perfil de usuario', text: 'Pieles que buscan combatir la flacidez, redefinir el óvalo facial o lograr un efecto tensor al instante.' },
-      ],
-    },
-  ],
-}
-
 // PLACEHOLDER: both documents are listed as pending approval (spec section 7).
 export const TYC = {
   eyebrow: 'TyC',

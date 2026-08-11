@@ -1,4 +1,4 @@
-import { BASES, BENEFITS, FAQS, PRODUCTS, STEPS, TYC } from '../content'
+import { BASES, BENEFITS, FAQS, STEPS, TYC } from '../content'
 import { Arrow, BenefitIcon, Check } from './ui'
 
 const CARD = 'rounded-2xl border border-slate-100 bg-white shadow-sm'
@@ -153,25 +153,3 @@ export function StepsCard() {
   )
 }
 
-export function ProductsCard() {
-  return (
-    <section id="productos" className={`${CARD} scroll-mt-24 p-5`}>
-      <p className="text-sm font-bold tracking-wide text-[#002B66]">{PRODUCTS.eyebrow}</p>
-      <p className="mt-0.5 text-xs text-slate-500">{PRODUCTS.title}</p>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        {PRODUCTS.items.map((product) => (
-          <article key={product.name} className="rounded-xl border border-slate-100 bg-[#FBFAF7] p-4">
-            <h3 className="text-sm font-bold text-[#002B66]">{product.name}</h3>
-            <ul className="mt-2.5 space-y-2">
-              {product.details.map((detail) => (
-                <li key={detail.label} className="text-xs leading-snug text-slate-600">
-                  <span className="font-semibold text-slate-700">{detail.label}:</span> {detail.text}
-                </li>
-              ))}
-            </ul>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}

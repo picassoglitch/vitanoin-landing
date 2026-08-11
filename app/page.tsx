@@ -1,4 +1,4 @@
-import { BasesCard, BenefitsStrip, FaqsCard, ProductsCard, StepsCard, TycCard } from './components/cards'
+import { BasesCard, BenefitsStrip, FaqsCard, StepsCard, TycCard } from './components/cards'
 import { HeroCollage, HeroCopy, ProductShot } from './components/hero'
 import { RegistrationForm } from './components/registration-form'
 import { SiteFooter, SiteHeader } from './components/site-chrome'
@@ -34,8 +34,6 @@ export default function Home() {
             </div>
 
             <StepsCard />
-
-            <ProductsCard />
           </div>
 
           <div className="space-y-6 lg:col-span-4">
