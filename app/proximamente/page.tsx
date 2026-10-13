@@ -68,40 +68,34 @@ export default async function ProximamentePage({
             ))}
           </div>
 
-          <details className="group max-w-sm pt-4" open={Boolean(error)}>
-            <summary className="cursor-pointer list-none text-sm font-medium text-slate-500 underline-offset-4 transition hover:text-[#002B66] hover:underline [&::-webkit-details-marker]:hidden">
-              ¿Tienes un código de acceso?
-            </summary>
-
-            <form action={unlock} className="mt-3 space-y-3 rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-blue-900/5">
-              <input type="hidden" name="next" value={next ?? '/'} />
-              <label htmlFor="code" className="block text-xs font-semibold text-slate-700">
-                Código de acceso
-              </label>
-              <div className="flex gap-2">
-                <input
-                  id="code"
-                  name="code"
-                  type="password"
-                  required
-                  autoComplete="off"
-                  autoCapitalize="none"
-                  className="min-w-0 flex-1 rounded-md border border-slate-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-500"
-                />
-                <button
-                  type="submit"
-                  className="shrink-0 rounded-md bg-[#002B66] px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-900"
-                >
-                  Entrar
-                </button>
-              </div>
-              {error && (
-                <p role="alert" className="text-xs text-rose-600">
-                  Ese código no es válido.
-                </p>
-              )}
-            </form>
-          </details>
+          <form action={unlock} className="max-w-sm space-y-3 rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-blue-900/5">
+            <input type="hidden" name="next" value={next ?? '/'} />
+            <label htmlFor="code" className="block text-xs font-semibold text-slate-700">
+              Código de acceso
+            </label>
+            <div className="flex gap-2">
+              <input
+                id="code"
+                name="code"
+                type="password"
+                required
+                autoComplete="off"
+                autoCapitalize="none"
+                className="min-w-0 flex-1 rounded-md border border-slate-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-500"
+              />
+              <button
+                type="submit"
+                className="shrink-0 rounded-md bg-[#002B66] px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-900"
+              >
+                Entrar
+              </button>
+            </div>
+            {error && (
+              <p role="alert" className="text-xs text-rose-600">
+                Ese código no es válido.
+              </p>
+            )}
+          </form>
         </div>
 
         {/* Polaroid, matching the collage on the main landing */}
