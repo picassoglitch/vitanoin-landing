@@ -1,6 +1,5 @@
 import { PRODUCT_SHOT, SITE, SOCIALS } from '../content'
 import { Heart, Logo, SocialIcon } from '../components/ui'
-import { unlock } from './actions'
 
 export const metadata = {
   title: 'Muy pronto | The Vitanoin Collective',
@@ -68,7 +67,7 @@ export default async function ProximamentePage({
             ))}
           </div>
 
-          <form action={unlock} className="max-w-sm space-y-3 rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-blue-900/5">
+          <form method="post" action="/proximamente/entrar" className="max-w-sm space-y-3 rounded-xl border border-slate-100 bg-white p-4 shadow-lg shadow-blue-900/5">
             <input type="hidden" name="next" value={next ?? '/'} />
             <label htmlFor="code" className="block text-xs font-semibold text-slate-700">
               Código de acceso
