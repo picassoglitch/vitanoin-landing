@@ -55,6 +55,27 @@ variable requires a redeploy** — an existing deployment will not pick it up.
 If the production URL redirects visitors to a Vercel login page, disable
 **Settings → Deployment Protection → Vercel Authentication**.
 
+## "Próximamente" wall
+
+While the site is being built, every page redirects to `/proximamente`, a
+"muy pronto" page in the site's style. Only people holding an access code see
+the real site. `/admin` stays reachable behind its own password.
+
+| Variable | Secret? | What it does |
+| --- | --- | --- |
+| `PREVIEW_CODES` | **yes** | Comma-separated access codes, e.g. `panalab-equipo,agencia-x`. Give each person or team their own. Codes are not case-sensitive. |
+| `SITE_PUBLIC` | no | Set to `true` at launch to take the wall down. Anything else keeps it up. |
+
+- On `/proximamente`, "¿Tienes un código de acceso?" opens the code field. A
+  valid code sets a signed, httpOnly cookie for 30 days and returns the visitor
+  to the page they asked for.
+- **Revoke a code** by removing it from `PREVIEW_CODES` and redeploying. Every
+  session opened with that code stops working. The other codes are unaffected.
+- The wall is **on by default**: if `PREVIEW_CODES` is missing, nobody gets
+  through, which is the safe way to fail.
+- Implemented in [`middleware.ts`](middleware.ts) and
+  [`lib/preview-gate.ts`](lib/preview-gate.ts).
+
 ## Admin dashboard
 
 `/admin`, password-protected with `ADMIN_PASSWORD`. Sessions last 8 hours and
