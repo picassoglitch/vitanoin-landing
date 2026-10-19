@@ -3,7 +3,7 @@ import { Logo, SocialIcon } from './ui'
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-100 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-[#EDE8E0] bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-3 px-4 py-3 sm:gap-6 sm:px-6">
         <Logo />
 
@@ -12,7 +12,7 @@ export function SiteHeader() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-slate-600 transition hover:text-[#002B66]"
+              className="text-sm font-medium text-[#5A4A3C] transition hover:text-[#5E4430]"
             >
               {item.label}
             </a>
@@ -21,7 +21,7 @@ export function SiteHeader() {
 
         <a
           href="/#registro"
-          className="shrink-0 rounded-md bg-[#002B66] px-3 py-2 text-[10px] font-bold tracking-wide text-white transition hover:bg-blue-900 sm:px-5 sm:py-2.5 sm:text-xs"
+          className="shrink-0 rounded-md bg-[#5E4430] px-3 py-2 text-[10px] font-bold tracking-wide text-white transition hover:bg-[#4A3524] sm:px-5 sm:py-2.5 sm:text-xs"
         >
           <span className="sm:hidden">ÚNETE</span>
           <span className="hidden sm:inline">ÚNETE AL COLLECTIVE</span>
@@ -33,7 +33,7 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-12 bg-[#002B66] text-white">
+    <footer className="mt-12 bg-[#5E4430] text-white">
       <div className="mx-auto max-w-[1400px] px-6 py-8">
         <div className="flex flex-wrap items-center justify-between gap-6">
           <Logo light />

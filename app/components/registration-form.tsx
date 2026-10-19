@@ -6,8 +6,8 @@ import { CONFIRMATION, FORM_CARD } from '../content'
 import { Arrow, Photo } from './ui'
 
 const input =
-  'w-full rounded-md border border-slate-200 px-3 py-2 text-sm outline-none transition focus:border-sky-400 focus:ring-2 focus:ring-sky-100'
-const label = 'mb-1 block text-[11px] font-semibold text-slate-700'
+  'w-full rounded-md border border-[#E4DED4] px-3 py-2 text-sm outline-none transition focus:border-[#927847] focus:ring-2 focus:ring-[#EFE8DC]'
+const label = 'mb-1 block text-[11px] font-semibold text-[#3D332B]'
 
 const CONSENTS = [
   { name: 'confirmed_age', text: 'Confirmo que soy mayor de edad.' },
@@ -48,9 +48,9 @@ export function RegistrationForm() {
 
   return (
     <section id="registro" className="relative scroll-mt-24">
-      <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-xl lg:pr-16">
-        <h2 className="font-hand text-2xl text-[#002B66]">{FORM_CARD.title}</h2>
-        <p className="mb-4 text-[11px] text-slate-500">{FORM_CARD.subtitle}</p>
+      <div className="rounded-2xl border border-[#EDE8E0] bg-white p-5 shadow-xl lg:pr-16">
+        <h2 className="font-hand text-2xl text-[#5E4430]">{FORM_CARD.title}</h2>
+        <p className="mb-4 text-[11px] text-[#8A7D72]">{FORM_CARD.subtitle}</p>
 
         {status.success ? (
           <div className="space-y-2 rounded-xl border border-emerald-200 bg-emerald-50 p-5 text-emerald-800">
@@ -328,26 +328,26 @@ export function RegistrationForm() {
               <textarea id="motivation" name="motivation" rows={3} required className={input} />
             </div>
 
-            <fieldset className="space-y-2 border-t border-slate-100 pt-3">
-              <legend className="mb-1 text-[11px] font-semibold text-slate-700">Consentimientos</legend>
+            <fieldset className="space-y-2 border-t border-[#EDE8E0] pt-3">
+              <legend className="mb-1 text-[11px] font-semibold text-[#3D332B]">Consentimientos</legend>
               {CONSENTS.map((consent) => (
-                <label key={consent.name} className="flex cursor-pointer items-start gap-2 text-[10px] leading-snug text-slate-600">
+                <label key={consent.name} className="flex cursor-pointer items-start gap-2 text-[10px] leading-snug text-[#5A4A3C]">
                   <input
                     name={consent.name}
                     type="checkbox"
                     required
-                    className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded accent-sky-600"
+                    className="mt-0.5 h-3.5 w-3.5 shrink-0 rounded accent-[#5E4430]"
                   />
                   <span>{consent.text}</span>
                 </label>
               ))}
-              <p className="pt-1 text-[10px] text-slate-500">
+              <p className="pt-1 text-[10px] text-[#8A7D72]">
                 Consulta los{' '}
-                <a href="/terminos" className="font-semibold text-[#002B66] underline decoration-sky-300 underline-offset-2">
+                <a href="/terminos" className="font-semibold text-[#5E4430] underline decoration-[#C9B48A] underline-offset-2">
                   Términos y Condiciones
                 </a>{' '}
                 y el{' '}
-                <a href="/terminos#privacidad" className="font-semibold text-[#002B66] underline decoration-sky-300 underline-offset-2">
+                <a href="/terminos#privacidad" className="font-semibold text-[#5E4430] underline decoration-[#C9B48A] underline-offset-2">
                   Aviso de Privacidad
                 </a>
                 .
@@ -357,7 +357,7 @@ export function RegistrationForm() {
             <button
               type="submit"
               disabled={status.loading}
-              className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#002B66] py-3 text-sm font-semibold text-white transition hover:bg-blue-900 disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#5E4430] py-3 text-sm font-semibold text-white transition hover:bg-[#4A3524] disabled:opacity-50"
             >
               {status.loading ? 'Guardando…' : 'Quiero formar parte del Collective'}
               {!status.loading && <Arrow className="h-4 w-4" />}
@@ -367,11 +367,11 @@ export function RegistrationForm() {
       </div>
 
       {/* Polaroid tucked against the form, as in the design comp. */}
-      <figure className="pointer-events-none absolute -right-2 top-16 hidden w-28 rotate-3 rounded-sm bg-white p-1.5 pb-7 shadow-lg ring-1 ring-slate-900/5 xl:block">
+      <figure className="pointer-events-none absolute -right-2 top-16 hidden w-28 rotate-3 rounded-sm bg-white p-1.5 pb-7 shadow-lg ring-1 ring-[#5E4430]/5 xl:block">
         <div className="aspect-[3/4] overflow-hidden rounded-sm">
           <Photo src={FORM_CARD.polaroidSrc} alt="Creadora del Collective" label="Foto" />
         </div>
-        <figcaption className="font-hand absolute inset-x-1 bottom-1 text-center text-[11px] leading-tight text-sky-700">
+        <figcaption className="font-hand absolute inset-x-1 bottom-1 text-center text-[11px] leading-tight text-[#7A6339]">
           {FORM_CARD.note}
         </figcaption>
       </figure>

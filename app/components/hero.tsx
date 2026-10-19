@@ -23,7 +23,7 @@ export function HeroBanner() {
       <div className="mt-6 flex justify-center">
         <a
           href="#registro"
-          className="inline-flex items-center gap-3 rounded-lg bg-[#002B66] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-900"
+          className="inline-flex items-center gap-3 rounded-lg bg-[#5E4430] px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#5E4430]/15 transition hover:bg-[#4A3524]"
         >
           {HERO.cta}
           <Arrow className="h-4 w-4" />

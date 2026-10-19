@@ -9,21 +9,21 @@ export const metadata = {
 
 function Section({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <section id={id} className="scroll-mt-24 border-t border-slate-100 pt-7">
-      <h2 className="mb-3 text-lg font-bold text-[#002B66]">{title}</h2>
-      <div className="space-y-3 text-sm leading-relaxed text-slate-600">{children}</div>
+    <section id={id} className="scroll-mt-24 border-t border-[#EDE8E0] pt-7">
+      <h2 className="mb-3 text-lg font-bold text-[#5E4430]">{title}</h2>
+      <div className="space-y-3 text-sm leading-relaxed text-[#5A4A3C]">{children}</div>
     </section>
   )
 }
 
 export default function TerminosPage() {
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-800">
+    <div className="min-h-screen bg-[#F7F6F1] text-[#1F1B17]">
       <SiteHeader />
 
       <main className="mx-auto max-w-3xl px-6 py-10">
-        <p className="text-sm font-semibold tracking-wide text-sky-600">— The Vitanoin Collective</p>
-        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#002B66]">
+        <p className="text-sm font-semibold tracking-wide text-[#927847]">— The Vitanoin Collective</p>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#5E4430]">
           Términos y Condiciones
         </h1>
 
@@ -59,7 +59,7 @@ export default function TerminosPage() {
                     <ul className="mt-1.5 list-disc space-y-1 pl-5">
                       {step.ideas.map((idea) => (
                         <li key={idea.title}>
-                          <strong className="font-semibold text-slate-700">{idea.title}:</strong> {idea.text}
+                          <strong className="font-semibold text-[#3D332B]">{idea.title}:</strong> {idea.text}
                         </li>
                       ))}
                     </ul>
@@ -121,23 +121,23 @@ export default function TerminosPage() {
               través de este formulario.
             </p>
             <p>
-              <strong className="font-semibold text-slate-700">Datos que recabamos.</strong> Nombre
+              <strong className="font-semibold text-[#3D332B]">Datos que recabamos.</strong> Nombre
               completo, fecha de nacimiento, ciudad y estado, correo electrónico, teléfono, usuario y
               enlace de Instagram y de TikTok, número de seguidores, métricas de contenido y la
               información que la participante decida compartir en el formulario.
             </p>
             <p>
-              <strong className="font-semibold text-slate-700">Finalidad.</strong> Evaluar las
+              <strong className="font-semibold text-[#3D332B]">Finalidad.</strong> Evaluar las
               solicitudes, seleccionar a las participantes, contactarlas y dar seguimiento a la
               convocatoria. Con su consentimiento, enviarle comunicaciones relacionadas con su
               participación por correo electrónico y WhatsApp.
             </p>
             <p>
-              <strong className="font-semibold text-slate-700">Transferencias.</strong> Los datos no se
+              <strong className="font-semibold text-[#3D332B]">Transferencias.</strong> Los datos no se
               comercializan ni se comparten con terceros ajenos a la operación de la convocatoria.
             </p>
             <p>
-              <strong className="font-semibold text-slate-700">Derechos ARCO.</strong> La participante
+              <strong className="font-semibold text-[#3D332B]">Derechos ARCO.</strong> La participante
               puede solicitar en cualquier momento el acceso, rectificación, cancelación u oposición al
               tratamiento de sus datos, así como revocar su consentimiento, escribiendo a los canales
               de contacto oficiales de Laboratorios Panalab.
@@ -151,7 +151,7 @@ export default function TerminosPage() {
                 href="https://instagram.com/panalabmx"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-semibold text-[#002B66] underline decoration-sky-300 underline-offset-2"
+                className="font-semibold text-[#5E4430] underline decoration-[#C9B48A] underline-offset-2"
               >
                 @Panalabmx
               </a>
@@ -160,16 +160,16 @@ export default function TerminosPage() {
           </Section>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-3 border-t border-slate-100 pt-6">
+        <div className="mt-10 flex flex-wrap gap-3 border-t border-[#EDE8E0] pt-6">
           <Link
             href="/#registro"
-            className="rounded-lg bg-[#002B66] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-900"
+            className="rounded-lg bg-[#5E4430] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#4A3524]"
           >
             Volver al registro
           </Link>
           <Link
             href="/"
-            className="rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-semibold text-[#002B66] transition hover:bg-slate-50"
+            className="rounded-lg border border-[#E4DED4] px-5 py-2.5 text-sm font-semibold text-[#5E4430] transition hover:bg-[#FBFAF7]"
           >
             Ir al inicio
           </Link>

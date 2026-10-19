@@ -1,7 +1,7 @@
 // Shared primitives: brand mark, icons and the image placeholder used until
 // real photography is supplied.
 
-export const NAVY = '#002B66'
+export const NAVY = '#5E4430'
 export const SKY = '#00A3E0'
 
 /** Official Panalab mark. Source artwork: public/images/panalab-logo-source.ai
@@ -40,9 +40,9 @@ export function Photo({
     <div
       role="img"
       aria-label={alt || 'Imagen pendiente'}
-      className={`flex h-full w-full items-center justify-center bg-gradient-to-br from-sky-100 via-slate-100 to-sky-50 ${className}`}
+      className={`flex h-full w-full items-center justify-center bg-gradient-to-br from-[#EFE8DC] via-[#EDE8E0] to-[#F7F3EC] ${className}`}
     >
-      <span className="px-2 text-center text-[9px] font-semibold uppercase tracking-wider text-sky-700/50">
+      <span className="px-2 text-center text-[9px] font-semibold uppercase tracking-wider text-[#927847]/50">
         {label ?? 'Imagen'}
       </span>
     </div>

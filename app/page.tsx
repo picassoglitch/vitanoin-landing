@@ -5,7 +5,7 @@ import { SiteFooter, SiteHeader } from './components/site-chrome'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F7F6F1] text-slate-800">
+    <div className="min-h-screen bg-[#F7F6F1] text-[#1F1B17]">
       <SiteHeader />
 
       <main className="mx-auto max-w-[1400px] overflow-x-hidden px-4 py-8 sm:px-6">
