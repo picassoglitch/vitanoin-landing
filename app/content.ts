@@ -53,8 +53,6 @@ export const BENEFITS = [
 export const FORM_CARD = {
   title: '¡Regístrate y sé parte!',
   subtitle: 'Selección ordenada de 500 perfiles.',
-  note: '¡Tu historia puede inspirar a miles más!',
-  polaroidSrc: '/images/ugc/form-polaroid.png' as string | null,
 }
 
 // Answers are drawn from the approved document.
