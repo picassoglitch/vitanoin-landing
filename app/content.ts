@@ -27,28 +27,13 @@ export const NAV = [
   { label: 'TyC', href: '/terminos' },
 ]
 
+// The approved landing banner (public/images/hero-banner.jpg). Its text is
+// part of the image, so title and alt carry it for screen readers.
 export const HERO = {
-  eyebrow: '— The Vitanoin Collective',
-  titleLine1: 'Tu piel tiene una historia.',
-  titleLine2Before: 'Queremos que seas ',
-  titleEmphasis: 'tú',
-  titleLine2After: ' quien la cuente.',
-  body: 'Reconocemos tu dedicación, tu creatividad y el impacto que generas cada día. Por eso creamos The Vitanoin Collective: un programa exclusivo para creadoras de contenido que inspiran, educan y construyen confianza en el cuidado de la piel. Únete y sé parte de algo que transforma pieles e historias.',
+  src: '/images/hero-banner.jpg',
+  title: 'Tu piel tiene una historia. Queremos que seas tú quien la cuente.',
+  alt: 'Tu piel tiene una historia. Queremos que seas tú quien la cuente. Reconocemos tu dedicación, tu creatividad y el impacto que generas cada día. Por eso creamos The Vitanoin Collective: un programa exclusivo para creadoras de contenido que inspiran, educan y construyen confianza en el cuidado de la piel. Únete y sé parte de algo que transforma pieles e historias. The Vitanoin Collective, Panalab México.',
   cta: 'Quiero formar parte del Collective',
-}
-
-// The tilted photo collage beside the headline.
-export const COLLAGE = {
-  noteTop: 'Historias reales que inspiran',
-  noteBottom: 'Ciencia que se siente',
-  placeholder: true,
-  // The Instagram handle is part of each image, so it is not repeated in markup.
-  cards: [
-    { caption: 'Mi momento favorito con VITANOIN CS', src: '/images/ugc/collage-1.png', tilt: '-6deg', lift: '0px' },
-    { caption: 'Constancia + Ciencia = Piel que se nota', src: '/images/ugc/collage-2.png', tilt: '3deg', lift: '-18px' },
-    { caption: 'Mi aliado diario para una piel luminosa', src: '/images/ugc/collage-3.png', tilt: '-3deg', lift: '10px' },
-    { caption: 'Compartir lo que me hace sentirme increíble', src: '/images/ugc/collage-4.png', tilt: '5deg', lift: '-8px' },
-  ],
 }
 
 export const PRODUCT_SHOT = {
